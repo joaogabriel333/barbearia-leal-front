@@ -2,8 +2,8 @@ import axios from 'axios';
 import React, { Component, useState, ChangeEvent, FormEvent, useEffect } from 'react';
 
 import Styles from '../app.module.css';
+import { Link } from 'react-router-dom';
 import { cadastroClientesInterface } from '../interfaces/cadastroClientesInterface';
-
 const ListagemClientes = () => {
 
     const [cliente, setCliente] = useState<cadastroClientesInterface[]>([]);
@@ -113,7 +113,7 @@ const ListagemClientes = () => {
                                     <td>{cliente.numero}</td>
                                     <td>{cliente.bairro}</td>
                                     <td>{cliente.cep}</td>
-                                    <td><a href="#" className='btn btn-primary btn-sm'>Editar</a>
+                                    <td><Link to={"/editar/cliente/"+cliente.id} className='btn btn-primary btn-sm'>Editar</Link>
                                     <a href="#" className='btn btn-danger btn-sm'>Excluir</a></td>
                                 </tr>
                                 ))}
